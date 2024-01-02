@@ -1,3 +1,7 @@
+<?php
+    $_SESSION['mensaje'] = "";
+?>
+
 <html>
     <head>
         <title>Sistema de votaciones</title>
@@ -5,6 +9,7 @@
     </head>
     <body>
         <p><strong>FORMULARIO DE VOTACI&Oacute;N:</strong></p>
+        <p><?php echo $_SESSION['mensaje']; ?></p>
         <form action="../index.php" method="POST" id="form">
             <table>
             <tr>
