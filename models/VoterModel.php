@@ -62,14 +62,21 @@ class VoterModel extends Connection{
             $rutDebugged = str_replace("-", "", $rut);
             $rutDebugged = str_replace(".", "", $rutDebugged);
 
-            $sql = "SELECT * FROM votes WHERE rut = ".$rutDebugged;
-            if($result = $this->conexion_db->query($sql)){
-                $this->conexion_db->close();
-                return false;
+            $sqlSearch = "SELECT * FROM votes WHERE rut = ".$rutDebugged;
+            $result = $this->conexion_db->query($sqlSearch);
+
+            if($result){
+                $row = $result->fetch_assoc();
+                $rutSearch = $row['rut'];
+                if(is_string($rutSearch)){
+                    $this->conexion_db->close();
+                    return false;
+                }
+                
             }
 
-            $sql = "INSERT INTO votes (names, alias, rut, email, region_id, commune_id, candidate_id, options) VALUES('$name','$alias','$rutDebugged','$email','$region_id','$commune_id','$candidate_id','$opcionesEscapadas')";
-            $result = $this->conexion_db->query($sql);
+            $sqlInsert = "INSERT INTO votes (names, alias, rut, email, region_id, commune_id, candidate_id, options) VALUES('$name','$alias','$rutDebugged','$email','$region_id','$commune_id','$candidate_id','$opcionesEscapadas')";
+            $result = $this->conexion_db->query($sqlInsert);
 
             if ($result) {
                 // Registro guardado exitosamente
