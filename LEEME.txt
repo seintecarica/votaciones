@@ -11,3 +11,6 @@ PASOS DE INSTALACION
 9.- Presionar el botón Importar.
 10.- Abrir un navegador e ingresar a la siguiente url: http://localhost/votaciones
 11.- Tras el paso anterior ya podemos ingresar al formulario de registro de votaciones.
+
+PHP Version 8.2.12
+Mysql Version 10.4.32-MariaDB
