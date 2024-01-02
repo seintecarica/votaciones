@@ -1,0 +1,13 @@
+PASOS DE INSTALACION
+
+1.- Descargar la última versión del ervidor de aplicaciones ampp desde la página https://www.apachefriends.org/es/index.html según el sistema operativo de se utilice.
+2.- Realizar la instalación por defecto del servidor xampp.
+3.- Tras finalizar la instalación, abrir el Control Panel de xampp e iniciar los servicios de Apache y MySQL.
+4.- En la ruta C:\xampp\htdocs\ crear una nueva carpeta llamada votaciones
+5.- Descargar del repositorio https://github.com/seintecarica/votaciones todos los elementos; carpetas y archivos y alojarlos en la carpeta creada en el paso anterior.
+6.- Ingresar desde un navegador a la url: http://localhost/phpmyadmin/.
+7.- En la pestaña Bases de datos, crear una nueva base de datos llamada "votes".
+8.- Ir a la pestaña Importar y seleccionar el archivo llamado "votes.sql" ubicado en la carpeta DB dentro del proyecto almacenado en la carpeta "votaciones" creada en el paso 4.
+9.- Presionar el botón Importar.
+10.- Abrir un navegador e ingresar a la siguiente url: http://localhost/votaciones
+11.- Tras el paso anterior ya podemos ingresar al formulario de registro de votaciones.
