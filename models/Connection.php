@@ -16,8 +16,6 @@
                 die("Conexión fallida: ".$this->conexion_db->connect_errno);
                 return;
             }
-            //else
-                //echo "Conectado";
         }
 
         function connect(){
