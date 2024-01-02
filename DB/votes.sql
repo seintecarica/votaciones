@@ -461,7 +461,7 @@ CREATE TABLE `votes` (
 --
 
 INSERT INTO `votes` (`id`, `names`, `alias`, `rut`, `email`, `region_id`, `commune_id`, `candidate_id`, `options`) VALUES
-(5, 'Rodrigo', 'rquisbert', '15.004.97', 'seintecarica@gmail.com', 1, 1, 1, 'TV,Redes Sociales');
+(5, 'Rodrigo', 'rquisbert', '150049733', 'seintecarica@gmail.com', 1, 1, 1, 'TV,Redes Sociales');
 
 --
 -- Índices para tablas volcadas
