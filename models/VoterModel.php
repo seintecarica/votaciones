@@ -59,20 +59,29 @@ class VoterModel extends Connection{
             $candidate_id = $datos['candidate_id'];
             $opcionesEscapadas = implode(',', array_map(array($this->conexion_db, 'real_escape_string'), $datos['options']));
 
-            $sql = "INSERT INTO votes (names, alias, rut, email, region_id, commune_id, candidate_id, options) VALUES('$name','$alias','$rut','$email','$region_id','$commune_id','$candidate_id','$opcionesEscapadas')";
+            $rutDebugged = str_replace("-", "", $rut);
+            $rutDebugged = str_replace(".", "", $rutDebugged);
+
+            $sql = "SELECT * FROM votes WHERE rut = ".$rutDebugged;
+            if($result = $this->conexion_db->query($sql)){
+                $this->conexion_db->close();
+                return false;
+            }
+
+            $sql = "INSERT INTO votes (names, alias, rut, email, region_id, commune_id, candidate_id, options) VALUES('$name','$alias','$rutDebugged','$email','$region_id','$commune_id','$candidate_id','$opcionesEscapadas')";
             $result = $this->conexion_db->query($sql);
 
             if ($result) {
                 // Registro guardado exitosamente
-                echo "Registro guardado exitosamente.";
                 $this->conexion_db->close();
+                return true;
             } else {
                 // Manejar el error en caso de fallo en la inserción
-                throw new Exception("Error al guardar las opciones: " . $this->conexion->error);
+                throw new Exception("Error al guardar la votación." . $this->conexion->error);
             }
         } catch (Exception $ex) {
             // Manejar la excepción, puedes registrarla, mostrar un mensaje al usuario, etc.
-            echo "Error: " . $ex->getMessage();
+            return false;
         }
     }
 }
