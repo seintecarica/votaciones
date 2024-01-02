@@ -1,8 +1,5 @@
 function validateName() {
-	// Obtener el valor del input
 	var inputValue = document.getElementById('name').value;
-
-	// Definir una expresión regular que permita solo números y letras (mayúsculas y minúsculas)
 	var regex = /^[a-zA-Z0-9]+$/;
 
 	// Verificar si el valor cumple con la expresión regular
@@ -11,7 +8,6 @@ function validateName() {
 			alert('Por favor, ingresa solo números y letras.');
 		}
 	}
-	
 }
 
 function validateAlias() {
@@ -26,12 +22,12 @@ function validateAlias() {
 
 function validateRut(){
 	var rutInput = document.getElementById('rut').value;
-	// Eliminar puntos y guión del RUT
+	// Elimina puntos y guión del RUT
 	var rutLimpio = rutInput.replace(/[.-]/g, '');
-	// Extraer el cuerpo y el dígito verificador
+	// Extrae el cuerpo y el dígito verificador
 	var cuerpo = rutLimpio.slice(0, -1);
 	var digitoVerificador = rutLimpio.slice(-1).toUpperCase();
-	// Calcular el dígito verificador esperado
+	// Calcula el dígito verificador esperado
 	var suma = 0;
 	var multiplo = 2;
 
@@ -68,7 +64,6 @@ function validateEmail() {
 	// Verificar si el email cumple con la expresión regular
 	if(emailInput.length > 0){
 		if (!regex.test(emailInput)) {
-			//alert('Email válido');
 			alert('Por favor, ingresa un email válido.');
 		}
 	}
