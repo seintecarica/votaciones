@@ -13,4 +13,4 @@ PASOS DE INSTALACION
 11.- Tras el paso anterior ya podemos ingresar al formulario de registro de votaciones.
 
 PHP Version 8.2.12
-Mysql Version 10.4.32-MariaDB
+Mysql Version 15.1 Distrib 10.4.32-MariaDB
