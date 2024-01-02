@@ -9,9 +9,13 @@ class VoterController{
         $formModel = new VoterModel();
         //echo $datos['options'];
         // Llamar al método del modelo para guardar los datos
-        $formModel->saveForm($datos);
-
-        // Redireccionar a alguna vista o página
+        if($formModel->saveForm($datos)){
+            $_SESSION['mensaje'] = "Registro guardado exitosamente.";
+        }
+        else{
+            $_SESSION['mensaje'] = "Rut ya registrado.";
+        }
+        //include('views/form.php');
         header('Location: views/form.php');
     }
 }
