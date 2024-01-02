@@ -3,7 +3,6 @@ function listRegions(){
         url:'../controllers/ListRegionController.php',
         type:'POST'
     }).done(function(resp){
-        //alert(resp);
         var data = JSON.parse(resp);
         var cadena = "";
         if(data.length > 0){
@@ -30,7 +29,6 @@ function listCommunes(region_id){
             region_id: region_id
         }
     }).done(function(resp){
-        //alert(resp);
         var data = JSON.parse(resp);
         var cadena = "";
         if(data.length > 0){
@@ -51,7 +49,6 @@ function listCandidates(){
         url:'../controllers/ListCandidateController.php',
         type:'POST'
     }).done(function(resp){
-        //alert(resp);
         var data = JSON.parse(resp);
         var cadena = "";
         if(data.length > 0){
