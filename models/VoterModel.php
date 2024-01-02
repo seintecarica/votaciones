@@ -2,12 +2,9 @@
 require_once "Connection.php";
 
 class VoterModel extends Connection{
-    //private $conn;
 
     public function __construct(){
-        //$this->conn = new Connection();
         parent::__construct();
-        //$this->conn->connect();
     }
     
     public function getRegions(){
@@ -72,22 +69,18 @@ class VoterModel extends Connection{
                     $this->conexion_db->close();
                     return false;
                 }
-                
             }
 
             $sqlInsert = "INSERT INTO votes (names, alias, rut, email, region_id, commune_id, candidate_id, options) VALUES('$name','$alias','$rutDebugged','$email','$region_id','$commune_id','$candidate_id','$opcionesEscapadas')";
             $result = $this->conexion_db->query($sqlInsert);
 
             if ($result) {
-                // Registro guardado exitosamente
                 $this->conexion_db->close();
                 return true;
             } else {
-                // Manejar el error en caso de fallo en la inserción
                 throw new Exception("Error al guardar la votación." . $this->conexion->error);
             }
         } catch (Exception $ex) {
-            // Manejar la excepción, puedes registrarla, mostrar un mensaje al usuario, etc.
             return false;
         }
     }
