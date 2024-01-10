@@ -1,6 +1,6 @@
 PASOS DE INSTALACION
 
-1.- Descargar la última versión del servidor de aplicaciones xampp desde la página https://www.apachefriends.org/es/index.html según el sistema operativo de se utilice.
+1.- Descargar la última versión del servidor de aplicaciones xampp desde la página https://www.apachefriends.org/es/index.html según el sistema operativo que se utilice.
 2.- Realizar la instalación por defecto del servidor xampp.
 3.- Tras finalizar la instalación, abrir el Control Panel de xampp e iniciar los servicios de Apache y MySQL.
 4.- En la ruta C:\xampp\htdocs\ crear una nueva carpeta llamada votaciones
